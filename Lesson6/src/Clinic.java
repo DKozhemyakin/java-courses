@@ -1,3 +1,7 @@
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
+
 /**
  * Class describes clinic
  * Created by damon on 28.04.2017.
@@ -19,8 +23,9 @@ public class Clinic {
 
     /**
      * add client
+     *
      * @param position Position
-     * @param client Client
+     * @param client   Client
      */
     public void addClient(final int position, final Client client) {
         this.clients[position] = client;
@@ -31,6 +36,28 @@ public class Clinic {
         return new Client[]{};
     }
 
+    public Client findClient(final String clientName) {
+        final Client[] client = {null};
+        for (Client curClient : clients) {
+            if (curClient.getId() == clientName)
+                client[0] = curClient;
+        }
+
+        //return client[0];
+
+
+
+        List<Client> clientList = Arrays.asList(clients);
+
+
+        clientList.forEach(currClient -> {
+            if (currClient.getId() == clientName) {
+                client[0] = (Client)currClient;
+            }
+        });
+
+        return client[0];
+    }
     //TODO add client, post client's pet's name, search by client's name or pet's name, edit client or pet name, delete, validate
 
 }
