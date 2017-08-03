@@ -12,14 +12,14 @@ public class CalculatorTest {
     @Test
     public void testDiv() throws Exception {
         Calculator calculator = new Calculator();
-        calculator.div(1,1);
+        calculator.div(1, 1);
         assertEquals(1, calculator.getResult());
     }
 
     @Test
     public void add() throws Exception {
         Calculator calculator = new Calculator();
-        calculator.add(1,1);
+        calculator.add(1, 1);
         assertEquals(2, calculator.getResult());
     }
 
